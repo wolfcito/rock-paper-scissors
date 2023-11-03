@@ -1,10 +1,12 @@
 package solutions.mundovirtual;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 import solutions.mundovirtual.infraestructure.software.LegacyGame;
 
@@ -31,13 +33,18 @@ final class LegacyGameTest {
     @Mock
     Random random;
 
+    private ByteArrayOutputStream out;
+
+    @BeforeEach
+    public void setup(){
+        MockitoAnnotations.openMocks(this);
+        out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+    }
     @Test
     public void when_quitInput_then_exitGame(){
         when(scanner.nextLine())
                 .thenReturn("Quit");
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
 
         game.play();
 
@@ -50,9 +57,6 @@ final class LegacyGameTest {
                 .thenReturn("Rock")
                 .thenReturn("Quit");
         when(random.nextInt(3)).thenReturn(OPTION_SCISSORS);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
 
         game.play();
 
@@ -68,9 +72,6 @@ final class LegacyGameTest {
                 .thenReturn("Quit");
         when(random.nextInt(3)).thenReturn(OPTION_PAPER);
 
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
         game.play();
 
         Assertions.assertTrue(out.toString().contains("Computer chose paper"));
@@ -84,9 +85,6 @@ final class LegacyGameTest {
                 .thenReturn("Paper")
                 .thenReturn("Quit");
         when(random.nextInt(3)).thenReturn(OPTION_ROCK);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
 
         game.play();
 
@@ -102,9 +100,6 @@ final class LegacyGameTest {
                 .thenReturn("Quit");
         when(random.nextInt(3)).thenReturn(OPTION_ROCK);
 
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
         game.play();
 
         Assertions.assertTrue(out.toString().contains("Computer chose rock"));
@@ -118,9 +113,6 @@ final class LegacyGameTest {
                 .thenReturn("Rock")
                 .thenReturn("Quit");
         when(random.nextInt(3)).thenReturn(OPTION_PAPER);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
 
         game.play();
 
