@@ -1,4 +1,4 @@
-package solutions.mundovirtual.controller;
+package solutions.mundovirtual.infraestructure.controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
