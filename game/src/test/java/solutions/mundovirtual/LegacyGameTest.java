@@ -15,7 +15,7 @@ import static org.mockito.Mockito.when;
 
 
 @ExtendWith(MockitoExtension.class)
-class LegacyGameTest {
+final class LegacyGameTest {
 
     @InjectMocks
     private LegacyGame game;
@@ -24,9 +24,8 @@ class LegacyGameTest {
     Scanner scanner;
 
     @Test
-    public void gameTest(){
+    public void when_quitInput_then_exitGame(){
         when(scanner.nextLine())
-                .thenReturn("Rock")
                 .thenReturn("Quit");
 
         ByteArrayOutputStream out = new ByteArrayOutputStream();
