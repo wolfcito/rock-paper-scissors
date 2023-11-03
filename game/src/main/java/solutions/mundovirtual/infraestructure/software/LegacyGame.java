@@ -1,4 +1,4 @@
-package solutions.mundovirtual.application;
+package solutions.mundovirtual.infraestructure.software;
 
 import solutions.mundovirtual.domain.GameOption;
 import solutions.mundovirtual.domain.ScoreBoard;
@@ -6,7 +6,9 @@ import solutions.mundovirtual.domain.ScoreBoard;
 import java.util.Random;
 import java.util.Scanner;
 
-import static solutions.mundovirtual.application.useCases.*;
+import static solutions.mundovirtual.application.computer.GetChoiceComputer.getChoiceComputer;
+import static solutions.mundovirtual.application.player.GetChoicePlayer.getChoicePlayer;
+import static solutions.mundovirtual.application.results.GetResults.getScoreBoard;
 import static solutions.mundovirtual.infraestructure.printers.printers.gameRules;
 import static solutions.mundovirtual.infraestructure.printers.printers.gameScoreBoard;
 
@@ -37,7 +39,7 @@ public class LegacyGame {
 
 			GameOption compnum = getChoiceComputer(random);
 
-			getResult(choicenum, compnum, scoreBoard);
+			getScoreBoard(choicenum, compnum, scoreBoard);
 			gameScoreBoard(scoreBoard);
 			choice = input.nextLine().toUpperCase();
 		}
