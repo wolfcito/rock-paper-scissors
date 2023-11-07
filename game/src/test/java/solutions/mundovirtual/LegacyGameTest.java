@@ -42,7 +42,7 @@ final class LegacyGameTest {
         System.setOut(new PrintStream(out));
     }
     @Test
-    public void when_quitInput_then_exitGame(){
+    void when_quitInput_then_exitGame(){
         when(scanner.nextLine())
                 .thenReturn("Quit");
 
@@ -52,7 +52,7 @@ final class LegacyGameTest {
     }
 
     @Test
-    public void when_chooseRock_then_beatsScissors(){
+    void when_chooseRock_then_beatsScissors(){
         when(scanner.nextLine())
                 .thenReturn("Rock")
                 .thenReturn("Quit");
@@ -66,7 +66,7 @@ final class LegacyGameTest {
     }
 
     @Test
-    public void when_chooseScissors_then_beatsPaper(){
+    void when_chooseScissors_then_beatsPaper(){
         when(scanner.nextLine())
                 .thenReturn("Scissors")
                 .thenReturn("Quit");
@@ -80,7 +80,7 @@ final class LegacyGameTest {
     }
 
     @Test
-    public void when_choosePaper_then_beatsRock(){
+    void when_choosePaper_then_beatsRock(){
         when(scanner.nextLine())
                 .thenReturn("Paper")
                 .thenReturn("Quit");
@@ -94,7 +94,7 @@ final class LegacyGameTest {
     }
 
     @Test
-    public void when_bothChooseRock_then_tie(){
+    void when_bothChooseRock_then_tie(){
         when(scanner.nextLine())
                 .thenReturn("Rock")
                 .thenReturn("Quit");
@@ -108,7 +108,7 @@ final class LegacyGameTest {
     }
 
     @Test
-    public void when_chooseRockAndComputerChoosePaper_then_loose(){
+    void when_chooseRockAndComputerChoosePaper_then_loose(){
         when(scanner.nextLine())
                 .thenReturn("Rock")
                 .thenReturn("Quit");

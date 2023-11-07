@@ -2,7 +2,7 @@ package solutions.mundovirtual.infraestructure.printers;
 
 import solutions.mundovirtual.domain.ScoreBoard;
 
-public class printers {
+public class Printers {
 	public static void gameRules() {
 		System.out.println("Let's play Rock, Paper, Scissors!");
 		System.out.println("Say \"Rock\", \"Paper\", or \"Scissors\" to indicate your choice. Otherwise say \"Quit\" to quit.");

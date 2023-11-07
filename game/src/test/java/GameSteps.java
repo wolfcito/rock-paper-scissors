@@ -13,7 +13,6 @@ import solutions.mundovirtual.infraestructure.software.LegacyGame;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 

@@ -9,8 +9,8 @@ import java.util.Scanner;
 import static solutions.mundovirtual.application.computer.GetChoiceComputer.getChoiceComputer;
 import static solutions.mundovirtual.application.player.GetChoicePlayer.getChoicePlayer;
 import static solutions.mundovirtual.application.results.GetResults.getScoreBoard;
-import static solutions.mundovirtual.infraestructure.printers.printers.gameRules;
-import static solutions.mundovirtual.infraestructure.printers.printers.gameScoreBoard;
+import static solutions.mundovirtual.infraestructure.printers.Printers.gameRules;
+import static solutions.mundovirtual.infraestructure.printers.Printers.gameScoreBoard;
 
 
 public class LegacyGame {
